@@ -1,17 +1,6 @@
-# macbook file
 .DS_Store
-__MACOSX
-
-# webpack file
-/node_modules
+node_modules
 /dist
-/vue2x
-/vuex
-/vueRouter
-package-lock.json
-src/_drafts
-Thumbs.db
-db.json
 
 # local env files
 .env.local
@@ -25,12 +14,8 @@ yarn-error.log*
 # Editor directories and files
 .idea
 .vscode
-.project
-.deploy*/
-.avoscloud/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw
-*.log
+*.sw?
