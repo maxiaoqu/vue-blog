@@ -6,5 +6,5 @@ const startRouter = [];
 Vue.use(Router);
 export default new Router({
 	startRouter,
-	mode: 'history'
+	// mode: 'history'
 });

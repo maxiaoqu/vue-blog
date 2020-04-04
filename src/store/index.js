@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import test from './modules/test';
+import Nav from './modules/nav';
 
 Vue.use(Vuex)
 
@@ -9,6 +9,6 @@ export default new Vuex.Store({
     mutations: {},
     actions: {},
     modules: {
-        test
+        Nav
     }
 });

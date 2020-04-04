@@ -1,12 +1,21 @@
 import router from './routers';
-import {indexRouter, useRouter, errorRouter} from './getRouter';
+import {
+    indexRouter,
+    articleRouter,
+    recommendRouter,
+    bookletRouter,
+    topicsRouter,
+    useRouter,
+    serverRouter,
+    errorRouter
+} from './getRouter';
 
 // 添加参数，避免多次循环导致的错误
 var getRouters;
 
 // 合并当前所有的路由
 const newRouters = (to, next, getrouter) => {
-    const routerArr = indexRouter.concat(useRouter).concat(errorRouter);
+    const routerArr = indexRouter.concat(articleRouter).concat(recommendRouter).concat(bookletRouter).concat(topicsRouter).concat(useRouter).concat(serverRouter).concat(errorRouter);
     router.addRoutes(routerArr);
     next({...to, replace: true});
 };

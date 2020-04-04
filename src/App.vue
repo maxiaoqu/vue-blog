@@ -16,7 +16,10 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        color: #333;
+        word-break: break-word;
+        text-rendering: optimizeLegibility;
+        background-color: #f4f5f5;
     }
 
     #app {
