@@ -13,6 +13,7 @@
 <style lang="less" scoped>
 .header-search{
     flex: 1;
+    min-width: 0;
     display: inline-block;
     text-align: center;
     input{
@@ -33,6 +34,7 @@
 @media (max-width: 720px) {
     .header-search{
         flex: 1;
+        min-width: 0;
         width: 100%;
         input{
             width: 85%;

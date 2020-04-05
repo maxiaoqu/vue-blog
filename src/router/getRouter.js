@@ -56,7 +56,7 @@ export const recommendRouter = [{
     meta: {
         title: '精品'
     },
-    component: Home,
+    component: Index,
     children: [{
         path: 'ui',
         name: 'ui',

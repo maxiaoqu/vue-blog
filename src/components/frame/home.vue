@@ -24,13 +24,13 @@
 <style scoped lang="less">
     .home_Page{
         max-width: 960px;
-        height: 100%;
         position: relative;
         margin: 0 auto;
-        &-box{
-            position: absolute;
-            top: 45px;
+        padding-bottom: 60px;
+
+        &-box {
             width: 100%;
+            margin-top: 20px;
         }
     }
 </style>

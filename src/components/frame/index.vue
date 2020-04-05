@@ -6,6 +6,7 @@
             <router-view></router-view>
         </main>
         <header-bar></header-bar>
+        <nav-button></nav-button>
     </div>
 </template>
 
@@ -14,10 +15,11 @@
     import HeaderBar from "../header/header-bar";
     import NavChild from "../navbar/nav-child";
     import {frameMixins} from "./mixins";
+    import navButton from "../navbar/nav-button";
 
     export default {
         mixins: [frameMixins],
-        components: {NavChild, HeaderBar, HeaderIndex}
+        components: {navButton, NavChild, HeaderBar, HeaderIndex}
     }
 </script>
 
@@ -25,13 +27,12 @@
 <style lang="less" scoped>
     .index_Page {
         max-width: 960px;
-        height: 100%;
         position: relative;
         margin: 0 auto;
+        padding-bottom: 60px;
 
         &-box {
             width: 100%;
-            height: 100%;
             margin-top: 60px;
         }
     }

@@ -15,7 +15,7 @@
                         </ul>
                     </li>
                     <li class="article-info-row info-title">
-                        <h4>文章标题啊啊啊文章标题啊啊啊文章标</h4>
+                        <h4>文章标题啊啊啊文章标题啊啊啊文章标,序号（{{item}}）</h4>
                     </li>
                     <li class="article-info-row info-action">
                         <span>

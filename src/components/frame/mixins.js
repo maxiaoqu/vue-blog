@@ -1,9 +1,12 @@
+import {scrollTopNum, scrollToTop} from "../../libs/viewScroll";
+
 export const frameMixins = {
     data() {
         return {
             startNum: 0,
             iScroll: 0,
-            isUpRoll: false
+            isUpRoll: false,
+            isScrolling: false
         }
     },
     mounted() {
@@ -11,15 +14,16 @@ export const frameMixins = {
         let _this = this;
         this.$nextTick(() => {
             window.addEventListener('scroll', _this.handleScroll, true);
-            _this.scrollTop();
+            scrollToTop()
         })
     },
     methods: {
         handleScroll() {
             // 页面滚动距顶部距离
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+            let scrollTop = scrollTopNum(),
                 scrollDiffere = scrollTop - this.iScroll;
             this.iScroll = scrollTop;
+            this.isScrolling = true;
             if (this.startNum == 0) {
                 this.isUpRoll = false;
                 this.startNum++;
@@ -30,16 +34,6 @@ export const frameMixins = {
                     this.isUpRoll = true;  // 向下滚动
                 }
             }
-        },
-        // 实现滚动到顶部的效果
-        scrollTop() {
-            let top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            const timeToTop = setInterval(() => {
-                document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
-                if (top <= 0) {
-                    clearInterval(timeToTop);
-                }
-            }, 10);
         }
     }
 }
