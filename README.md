@@ -1,56 +1,54 @@
-# choi
+<p align="center">
+    <a href="http://www.maxiaoqu.com/">
+        <img width="300" src="http://www.maxiaoqu.com/maxiaoqu.png">
+    </a>
+</p>
 
-填写 yaml 配置文件，只需3番钟，即可自动化构建一个简单的网页版简历
+<h2>
+    vue-blog
+    <h4>一个模仿掘金的博客，基于vue-cli3+搭建，配置了想相关的信息，喜欢的话，欢迎star</h4>
+</h2>
 
-## 示例
+## 相关链接
+- [案例地址](http://github.maxiaoqu.com/vue-blog/)
+- [gitHub地址](https://github.com/maxiaoqu/vue-blog)
 
-演示地址：[https://resume.npmrundev.com/](https://resume.npmrundev.com)
+## 主要维护人员
+|人员|github账号|头像|作者网站|联系邮箱|
+|---|---|---|---|---|
+|码小趣|[maxiaoqu](https://github.com/maxiaoqu) |  ![](https://avatars1.githubusercontent.com/u/25891598?s=60&v=4)|www.maxiaoqu.com|maxiaoqu@gmail.com
 
-![演示图片](https://github.com/chenrrrrr/choi/blob/master/demo.png)
-
-## 项目结构
-
+## 安装
 ```
-├── README.md
-├── package.json
-├── public
-│   ├── conf.yml  # 配置文件
-│   ├── favicon.ico # 站点图标
-│   └── index.html # 在这里修改网页的标题
-├── src
-│   ├── App.vue
-│   ├── assets
-│   │   ├── less # 全局less
-│   │   │   └── common.less
-│   │   └── theme
-│   │       └── pure # 默认主题
-│   │           ├── core.less # 主题核心样式文件
-│   │           ├── print.less # 主题打印稿样式
-│   │           └── variables.less # 主题样式文件，默认提供了6种颜色，可供快速修改
-│   ├── components
-│   │   └── pure.vue # pure主题模板组件
-│   └── main.js
-├── vue.config.js
-└── yarn.lock
+npm install
 ```
 
-### 配置文件
-
-配置文件采用了简单易懂的`yaml`语法，当`yarn`打包后的`dist`文件部署打牌`nginx`之流的服务器上，会自动解析`conf.yml`并且渲染到页面中，可参考本例项目中的`conf.yml`配置
-
-### 安装依赖
-
+## 运行
 ```
-yarn install
+npm run serve
 ```
 
-### 打包构建
-
+## 打包
 ```
-yarn run build / yarn build
+npm run build
 ```
 
-### 部署到服务器
+## 检查
+```
+npm run lint
+```
 
-将dist文件夹的静态文件上传到服务器中
-
+## 文件结构
+```shell
+├── public...........................打包所需静态资源
+└── src..............................存放文件的相关目录
+    ├── assets.......................项目静态资源
+    ├── components...................模板组件
+    ├── dictionary...................字典匹配库
+    ├── libs.........................公用的方法库
+    ├── router.......................路由文件
+    ├── store........................vuex状态管理
+    ├── view.........................vue页面文件
+    ├── APP.vue......................app.vue文件
+    └── main.js......................vue相关全局配置
+```
