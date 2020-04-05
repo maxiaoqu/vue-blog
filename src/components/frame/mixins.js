@@ -1,4 +1,4 @@
-import {scrollTopNum, scrollToTop} from "../../libs/viewScroll";
+import {getAttriHeight, scrollTopNum, scrollToTop} from "../../libs/viewScroll";
 
 export const frameMixins = {
     data() {
@@ -6,7 +6,8 @@ export const frameMixins = {
             startNum: 0,
             iScroll: 0,
             isUpRoll: false,
-            isScrolling: false
+            isScrolling: false,
+            sidebarHeight: 0
         }
     },
     mounted() {
@@ -14,7 +15,7 @@ export const frameMixins = {
         let _this = this;
         this.$nextTick(() => {
             window.addEventListener('scroll', _this.handleScroll, true);
-            scrollToTop()
+            scrollToTop();
         })
     },
     methods: {
@@ -24,6 +25,8 @@ export const frameMixins = {
                 scrollDiffere = scrollTop - this.iScroll;
             this.iScroll = scrollTop;
             this.isScrolling = true;
+            let sidebar = document.getElementById('sidebar');
+            this.sidebarHeight = getAttriHeight(sidebar);
             if (this.startNum == 0) {
                 this.isUpRoll = false;
                 this.startNum++;
@@ -33,6 +36,11 @@ export const frameMixins = {
                 } else if (scrollDiffere > 20) {
                     this.isUpRoll = true;  // 向下滚动
                 }
+            }
+            if (scrollTop * 1 > this.sidebarHeight + 50) {
+                console.log(909090);
+            }else{
+                console.log(808080);
             }
         }
     }

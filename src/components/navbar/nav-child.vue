@@ -1,13 +1,9 @@
 <template>
     <nav class="nav-child" :class="{totop: isUpRoll}">
         <ul class="nav-child-list">
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
-            <li class="nav-child-list-item">123123231</li>
+            <li class="nav-child-list-item" @click="gotoArticle('article')">推荐</li>
+            <li class="nav-child-list-item" @click="gotoArticle('web')">前端</li>
+            <li class="nav-child-list-item" @click="gotoArticle('java')">Java</li>
         </ul>
     </nav>
 </template>
@@ -16,9 +12,16 @@
     export default {
         name: "nav-child",
         props: {
-            isUpRoll:{
+            isUpRoll: {
                 type: Boolean,
                 default: false
+            }
+        },
+        methods: {
+            gotoArticle(name) {
+                this.$router.push({
+                    name: name
+                })
             }
         }
     }

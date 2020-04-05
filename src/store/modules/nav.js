@@ -1,7 +1,7 @@
 export default {
     state: {
         navData: [
-            {name: '首页', router: 'index',icon:'home'},
+            {name: '首页', router: 'article',icon:'home'},
             {name: '精品', router: 'recommend',icon:'heart'},
             {name: '小册', router: 'booklet',icon:'book'},
             {name: '话题', router: 'topics',icon:'telegram'},
