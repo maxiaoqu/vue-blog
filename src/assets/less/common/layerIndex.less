@@ -1,5 +1,6 @@
 .frame-pege {
   max-width: 960px;
+  min-height: 100%;
   position: relative;
   margin: 0 auto;
   padding-bottom: 60px;
@@ -21,10 +22,10 @@
   background: transparent;
 
   &-list {
+    width: 700px;
     background: #ffffff;
     margin-right: 260px;
     border-radius: 2px;
-    width: 700px;
   }
 
   &-sidebar {
@@ -33,12 +34,31 @@
     position: absolute;
     top: 120px;
     right: 0;
+    padding-bottom: 60px;
+  }
+
+  &-sidebarx {
+    margin-left: 20px;
+    width: 240px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    padding-bottom: 60px;
+  }
+
+  &-recommend {
+    width: 700px;
+    background: #ffffff;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .page {
-    &-sidebar {
+    &-list, &-recommend {
+      width: 100%;
+    }
+
+    &-sidebar, &-sidebarx {
       display: none;
     }
   }

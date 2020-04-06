@@ -1,7 +1,7 @@
 <template>
     <ul class="article-list">
         <li class="article-list-item"
-            v-for="item in 100"
+            v-for="item in 20"
             :key="item"
             @click="articleDetails(item)">
             <div class="article-list-item-content">
@@ -69,6 +69,9 @@
     .article-list {
         &-item {
             border-bottom: 1px solid rgba(178, 186, 194, .15);
+            &:last-child{
+                border-bottom: 1px solid transparent;
+            }
 
             &-content {
                 display: flex;

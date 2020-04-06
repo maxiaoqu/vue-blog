@@ -8,7 +8,7 @@
                 <sidebar-tags slot="list"></sidebar-tags>
             </sidebar-box>
             <sidebar-box title="作者榜" icon="tags">
-                <sidebar-user slot="list"></sidebar-user>
+                <sidebar-userlist slot="list"></sidebar-userlist>
             </sidebar-box>
         </div>
     </div>
@@ -18,10 +18,10 @@
     import ArticleList from "../../components/article/article-list";
     import SidebarBox from "../../components/sidebar/sidebar-box";
     import SidebarTags from "../../components/sidebar/sidebar-tags";
-    import SidebarUser from "../../components/sidebar/sidebar-user";
+    import SidebarUserlist from "../../components/sidebar/sidebar-userlist";
     export default {
         name: 'index',
-        components: {SidebarUser, SidebarTags, SidebarBox, ArticleList},
+        components: {SidebarUserlist, SidebarTags, SidebarBox, ArticleList},
         mounted() {},
         methods: {}
     }

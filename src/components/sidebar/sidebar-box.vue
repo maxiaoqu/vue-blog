@@ -49,14 +49,12 @@
             }
 
             &-header {
-                width: 210px;
                 display: flex;
                 padding: 12px 15px;
                 border-bottom: 1px solid hsla(0, 0%, 59.2%, .1);
             }
 
             &-list {
-                width: 210px;
                 padding: 12px 15px;
             }
         }
