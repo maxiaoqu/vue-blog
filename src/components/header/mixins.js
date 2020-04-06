@@ -1,10 +1,12 @@
-import {mapGetters} from "vuex";
+import {mapGetters, mapActions} from "vuex";
+import {getNavClassifyData} from "../../dictionary/navData";
 
 export const headerNav = {
     data() {
         return {
             navData: [],
-            activeNav: 'index'
+            activeNav: 'article',
+            activeClassify: 'recommend'
         }
     },
     mounted() {
@@ -15,16 +17,27 @@ export const headerNav = {
         ...mapGetters([
             'getNavData'
         ]),
+        ...mapActions([
+            'setNavClassify'
+        ]),
         // 获取当前路由
-        getActiveNav(){
-            let fullPath = this.$route.fullPath;
-            this.activeNav = fullPath.split('/')[1];
+        getActiveNav() {
+            let name = this.$route.name,
+                classify = this.$route.params.classify;
+            this.activeNav = name;
+            this.activeClassify = classify;
         },
         // 点击跳转
-        gotoLink(name) {
-            this.activeNav = name;
+        gotoLink(route) {
+            let path = '/' + route.path, classify = [];
+            this.activeNav = route.path;
+            if (route.classify != '') {
+                path = '/nettext/' + route.path + '/' + route.classify
+                classify = getNavClassifyData(route.path);
+            }
+            this.setNavClassify(classify);
             this.$router.push({
-                name: name
+                path: path
             })
         }
     }

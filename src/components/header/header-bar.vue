@@ -2,9 +2,9 @@
     <ul class="header-bar">
         <li class="header-bar-item"
             v-for="(item,index) in navData"
-            :class="{ 'active': item.router == activeNav}"
+            :class="{ 'active': item.path == activeNav}"
             :key="index"
-            @click="gotoLink(item.router)">
+            @click="gotoLink(item)">
             <icon-fa class="barIcon" :icon="item.icon"></icon-fa>
             {{item.name}}
         </li>
@@ -43,12 +43,14 @@
             flex: 1;
             min-width: 0;
             text-align: center;
-            .barIcon{
+
+            .barIcon {
                 display: block;
                 font-size: 18px;
                 padding-top: 8px;
             }
-            &.active{
+
+            &.active {
                 color: #e7475d;
             }
         }

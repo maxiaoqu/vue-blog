@@ -4,11 +4,8 @@
             <article-list></article-list>
         </div>
         <div class="page-sidebar" id="sidebar">
-            <sidebar-box title="文章标签" icon="tags" color="red">
+            <sidebar-box title="精品标签" icon="tags" color="red">
                 <sidebar-tags slot="list"></sidebar-tags>
-            </sidebar-box>
-            <sidebar-box title="作者榜" icon="tags">
-                <sidebar-userlist slot="list"></sidebar-userlist>
             </sidebar-box>
         </div>
     </div>

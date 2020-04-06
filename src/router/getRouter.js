@@ -21,58 +21,31 @@ export const indexRouter = [{
     }]
 }]
 
-// 文章
-export const articleRouter = [{
-    path: '/article',
-    name: 'article',
+// 文章、精品
+export const nettextRouter = [{
+    path: '/nettext',
+    name: 'nettext',
     meta: {
         title: '首页',
     },
     component: Index,
-    redirect: '/article/recommended',
+    redirect: '/nettext/article',
     children: [{
-        path: 'recommended',
-        name: 'recommended',
+        path: 'article/:classify',
+        name: 'article',
         meta: {
-            title: '推荐'
+            title: '首页文章'
         },
         component: () => import ("@/views/article/index.vue")
     },{
-        path: 'web',
-        name: 'web',
+        path: 'boutique/:classify',
+        name: 'boutique',
         meta: {
-            title: '前端'
+            title: '精品推荐'
         },
-        component: () => import ("@/views/article/web.vue")
-    },{
-        path: 'java',
-        name: 'java',
-        meta: {
-            title: 'java'
-        },
-        component: () => import ("@/views/article/java.vue")
+        component: () => import ("@/views/boutique/index.vue")
     }]
 }]
-
-
-// 精品
-export const recommendRouter = [{
-    path: '/recommend',
-    name: 'recommend',
-    redirect: '/recommend/ui',
-    meta: {
-        title: '精品'
-    },
-    component: Index,
-    children: [{
-        path: 'ui',
-        name: 'ui',
-        meta: {
-            title: 'ui框架'
-        },
-        component: () => import ("@/views/recommend/index.vue")
-    }]
-}];
 
 // 小册
 export const bookletRouter = [{

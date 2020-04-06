@@ -2,9 +2,9 @@
     <ul class="header-nav">
         <li class="header-nav-item"
             v-for="(item,index) in navData"
-            :class="{ 'active': item.router == activeNav}"
+            :class="{ 'active': item.path == activeNav}"
             :key="index"
-            @click="gotoLink(item.router)">
+            @click="gotoLink(item)">
             {{item.name}}
         </li>
     </ul>

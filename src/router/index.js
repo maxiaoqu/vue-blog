@@ -1,8 +1,7 @@
 import router from './routers';
 import {
     indexRouter,
-    articleRouter,
-    recommendRouter,
+    nettextRouter,
     bookletRouter,
     topicsRouter,
     useRouter,
@@ -15,7 +14,7 @@ var getRouters;
 
 // 合并当前所有的路由
 const newRouters = (to, next, getrouter) => {
-    const routerArr = indexRouter.concat(articleRouter).concat(recommendRouter).concat(bookletRouter).concat(topicsRouter).concat(useRouter).concat(serverRouter).concat(errorRouter);
+    const routerArr = indexRouter.concat(nettextRouter).concat(bookletRouter).concat(topicsRouter).concat(useRouter).concat(serverRouter).concat(errorRouter);
     router.addRoutes(routerArr);
     next({...to, replace: true});
 };
@@ -34,7 +33,7 @@ router.beforeEach((to, from, next) => {
     }
     if (to.path === '' || to.path === '/') {
         next({
-            path: '/article'
+            path: '/nettext/article/'
         })
         return;
     } else {

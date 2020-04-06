@@ -1,9 +1,13 @@
 <template>
     <nav class="nav-child" :class="{totop: isUpRoll}">
         <ul class="nav-child-list">
-            <li class="nav-child-list-item" @click="gotoArticle('article')">推荐</li>
-            <li class="nav-child-list-item" @click="gotoArticle('web')">前端</li>
-            <li class="nav-child-list-item" @click="gotoArticle('java')">Java</li>
+            <li class="nav-child-list-item"
+                v-for="item in classifyData"
+                :class="{ 'active': item.classify == activeClassify}"
+                :key="item.classify"
+                @click="gotoArticle(item)">
+                {{item.name}}
+            </li>
         </ul>
     </nav>
 </template>
@@ -11,17 +15,46 @@
 <script>
     export default {
         name: "nav-child",
+        data() {
+            return {
+                classifyData: [],
+                activeClassify: ''
+            }
+        },
         props: {
             isUpRoll: {
                 type: Boolean,
                 default: false
             }
         },
+        computed: {
+            navClassify() {
+                return this.$store.state.Nav.navClassify;
+            }
+        },
+        mounted() {
+            this.getActiveClassify();
+        },
         methods: {
-            gotoArticle(name) {
+            gotoArticle(route) {
+                let path = '/nettext/' + route.path + '/' + route.classify;
                 this.$router.push({
-                    name: name
+                    path: path
                 })
+            },
+            // 获取当前路由
+            getActiveClassify() {
+                let classify = this.$route.params.classify;
+                this.classifyData = this.navClassify;
+                this.activeClassify = classify;
+            },
+        },
+        watch: {
+            navClassify(newVal) {
+                this.classifyData = newVal;
+            },
+            $route() {
+                this.getActiveClassify();
             }
         }
     }
@@ -56,7 +89,11 @@
                 display: flex;
                 flex-shrink: 0;
                 font-size: 15px;
-                padding: 0 15px 0 0;
+                padding: 0 15px 0 15px;
+
+                &.active {
+                    color: #e7475d;
+                }
             }
         }
 
