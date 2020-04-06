@@ -95,7 +95,7 @@
         }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 960px) {
         .nav-article {
             margin-left: -50px;
             bottom: 90px;
