@@ -1,8 +1,8 @@
 <template>
-    <div class="index_Page">
+    <div class="frame-pege index">
         <header-index :isUpRoll="isUpRoll"></header-index>
         <nav-child :isUpRoll="isUpRoll"></nav-child>
-        <main class="index_Page-box">
+        <main class="frame-pege-boxi">
             <router-view></router-view>
         </main>
         <header-bar></header-bar>
@@ -22,18 +22,3 @@
         components: {navButton, NavChild, HeaderBar, HeaderIndex}
     }
 </script>
-
-
-<style lang="less" scoped>
-    .index_Page {
-        max-width: 960px;
-        position: relative;
-        margin: 0 auto;
-        padding-bottom: 60px;
-
-        &-box {
-            width: 100%;
-            margin-top: 60px;
-        }
-    }
-</style>

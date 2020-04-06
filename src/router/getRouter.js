@@ -139,15 +139,15 @@ export const serverRouter = [{
     meta: {
         title: '首页',
     },
-    component: Index,
-    redirect: '/serve/details',
+    component: Child,
+    redirect: '/serve/articleDetails',
     children: [{
-        path: 'details/:id',
-        name: 'index',
+        path: 'articleDetails/:id',
+        name: 'articleDetails',
         meta: {
             title: '首页'
         },
-        component: () => import ("@/views/index/index.vue")
+        component: () => import ("@/views/article/articleDetails.vue")
     }]
 }]
 

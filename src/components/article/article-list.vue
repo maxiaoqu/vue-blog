@@ -50,7 +50,7 @@
             // 文章详情
             articleDetails(id){
                 this.$router.push({
-                    path: '/server/details/'+id
+                    path: '/server/articleDetails/'+id
                 })
             },
             // 点赞

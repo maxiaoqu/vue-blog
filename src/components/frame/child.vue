@@ -1,7 +1,7 @@
 <template>
-    <div class="child_Page">
+    <div class="frame-pege child">
         <header-index></header-index>
-        <main class="child_Page-box">
+        <main class="frame-pege-box">
             <router-view></router-view>
         </main>
         <header-bar></header-bar>
@@ -16,15 +16,5 @@
     }
 </script>
 <style lang="less" scoped>
-    .child_Page{
-        max-width: 960px;
-        position: relative;
-        margin: 0 auto;
-        padding-bottom: 60px;
 
-        &-box {
-            width: 100%;
-            margin-top: 60px;
-        }
-    }
 </style>

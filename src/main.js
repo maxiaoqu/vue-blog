@@ -4,6 +4,7 @@ import store from './store';
 import router from './router';
 import './assets/css/common.css';
 import './assets/css/fontAwesome.css';
+import './assets/less/index.less';
 
 Vue.config.productionTip = false
 

@@ -1,9 +1,9 @@
 <template>
-    <div class="index">
-        <div class="index-list">
+    <div class="page">
+        <div class="page-list">
             <article-list></article-list>
         </div>
-        <div class="index-sidebar">
+        <div class="page-sidebar">
             <sidebar-box title="标签" icon="tags" color="red">
                 <sidebar-tags slot="list"></sidebar-tags>
             </sidebar-box>
@@ -26,29 +26,3 @@
         methods: {}
     }
 </script>
-
-<style scoped lang="less">
-    .index {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        display: flex;
-        &-list{
-            flex: 1;
-            min-width: 0;
-            width: 100%;
-            background: #ffffff;
-        }
-        &-sidebar{
-            margin-left: 20px;
-            width: 240px;
-        }
-    }
-    @media (max-width: 720px) {
-        .index {
-            &-sidebar{
-                display: none;
-            }
-        }
-    }
-</style>

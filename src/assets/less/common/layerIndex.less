@@ -1,0 +1,45 @@
+.frame-pege {
+  max-width: 960px;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 60px;
+
+  &-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &-boxi {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+
+  &-list {
+    background: #ffffff;
+    margin-right: 260px;
+    border-radius: 2px;
+    width: 700px;
+  }
+
+  &-sidebar {
+    margin-left: 20px;
+    width: 240px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    &-sidebar {
+      display: none;
+    }
+  }
+}
