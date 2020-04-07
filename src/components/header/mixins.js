@@ -26,7 +26,6 @@ export const headerNav = {
                 classify = this.$route.name == 'index' ? 'recommend' : this.$route.params.classify;
             this.activeNav = name;
             this.activeClassify = classify;
-            console.log(999,classify)
         },
         // 点击跳转
         gotoLink(route) {
