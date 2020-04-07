@@ -32,8 +32,7 @@
         methods: {
             getBoutiqueData(classify) {
                 classify = !classify ? this.$route.params.classify : classify;
-                this.boutiqueData = getBoutiqueList(classify)
-                console.log(9999, this.boutiqueData);
+                this.boutiqueData = getBoutiqueList(classify);
             }
         },
         watch: {

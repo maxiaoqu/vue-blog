@@ -47,6 +47,7 @@
                 let classify = this.$route.name == 'index' ? 'recommend' : this.$route.params.classify;
                 this.classifyData = this.navClassify;
                 this.activeClassify = classify;
+                // console.log(11111, classify)
             },
         },
         watch: {
