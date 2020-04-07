@@ -54,7 +54,7 @@ export const frameMixins = {
         // 获取当前类别下的分类
         getCategoryClassify() {
             let route = this.$route;
-            let routeName = route.name,
+            let routeName = route.name == 'index' ? 'article' : route.name,
                 routeParams = route.params;
             let classifyData = getNavClassifyData(routeName);
             this.setNavClassify(classifyData);

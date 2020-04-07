@@ -44,7 +44,7 @@
             },
             // 获取当前路由
             getActiveClassify() {
-                let classify = this.$route.params.classify;
+                let classify = this.$route.name == 'index' ? 'recommend' : this.$route.params.classify;
                 this.classifyData = this.navClassify;
                 this.activeClassify = classify;
             },

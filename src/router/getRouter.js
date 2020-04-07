@@ -17,7 +17,7 @@ export const indexRouter = [{
         meta: {
             title: '首页'
         },
-        component: () => import ("@/views/index/index.vue")
+        component: () => import ("@/views/article/index.vue")
     }]
 }]
 

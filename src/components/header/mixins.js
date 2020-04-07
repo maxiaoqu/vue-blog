@@ -22,10 +22,11 @@ export const headerNav = {
         ]),
         // 获取当前路由
         getActiveNav() {
-            let name = this.$route.name,
-                classify = this.$route.params.classify;
+            let name = this.$route.name == 'index' ? 'article':this.$route.name,
+                classify = this.$route.name == 'index' ? 'recommend' : this.$route.params.classify;
             this.activeNav = name;
             this.activeClassify = classify;
+            console.log(999,classify)
         },
         // 点击跳转
         gotoLink(route) {

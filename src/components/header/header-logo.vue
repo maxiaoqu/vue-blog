@@ -11,7 +11,7 @@
         methods:{
             gotoIndex(){
                 this.$router.push({
-                    name: 'article'
+                    name: 'index'
                 })
             }
         }

@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
     }
     if (to.path === '' || to.path === '/') {
         next({
-            path: '/nettext/article/'
+            path: '/'
         })
         return;
     } else {
