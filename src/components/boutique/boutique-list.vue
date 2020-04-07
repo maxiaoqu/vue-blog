@@ -2,6 +2,7 @@
     <ul class="boutique-list">
         <li class="boutique-list-item"
             v-for="item in boutiqueData"
+            @click="gotoBoutiqueHome(item.href)"
             :key="item.name">
             <div class="item-logo">
                 <img :src="item.logo"/>
@@ -12,7 +13,9 @@
                     <span v-for="tag in item.technology" :key="tag">{{tag}}</span>
                 </div>
                 <div class="boutique-describe">{{item.describe}}</div>
-                <div class="boutique-github">
+                <div class="boutique-github"
+                     v-if="item.gitHub != ''"
+                     @click.stop="gotoGitHub(item.gitHub)">
                     <img src="../../assets/img/logo/github.png">
                 </div>
                 <span class="boutique-messages">更新时间：{{item.time}}</span>
@@ -30,6 +33,14 @@
                 default: () => {
                     return []
                 }
+            }
+        },
+        methods:{
+            gotoBoutiqueHome(href){
+                window.open(href);
+            },
+            gotoGitHub(gitHub){
+                window.open(gitHub);
             }
         }
     }
