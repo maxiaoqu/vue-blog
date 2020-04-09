@@ -6,11 +6,12 @@
 
 <h2>
     vue-blog
-    <h4>一个模仿掘金的博客,自适应Pc端+手机端，基于vue-cli3+搭建，配置了想相关的信息，喜欢的话，欢迎star</h4>
+    <h4>一个模仿掘金的博客,自适应Pc端+手机端，基于vue-cli3+搭建，喜欢的话，欢迎star</h4>
 </h2>
 
 ## 相关链接
-- [gitHub地址](https://github.com/maxiaoqu/vue-blog)
+- [gitHub地址-Vue版本](https://github.com/maxiaoqu/vue-blog)
+- [gitHub地址-React版本](https://github.com/maxiaoqu/react-blog)
 - [案例地址](http://github.maxiaoqu.com/vue-blog/)
 
 ## 主要维护人员
