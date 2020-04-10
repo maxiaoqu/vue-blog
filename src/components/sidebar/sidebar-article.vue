@@ -2,6 +2,7 @@
     <ul class="sidebar-article">
         <li class="sidebar-article-item"
             v-for="index in 5"
+            @click="articleDetails(index)"
             :key="index">
             <h4>文章标提文章标提文章标提文章标提文章标提{{index}}</h4>
             <div class="article-info">
@@ -27,7 +28,14 @@
 
     export default {
         name: "sidebar-article",
-        components: {IconFa}
+        components: {IconFa},
+        methods:{
+            articleDetails(id){
+                this.$router.push({
+                    path: '/server/articleDetails/'+id
+                })
+            },
+        }
     }
 </script>
 

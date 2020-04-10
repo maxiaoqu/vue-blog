@@ -1,9 +1,9 @@
 <template>
     <div class="page">
         <div class="page-list">
-            <boutique-list :boutiqueData="boutiqueData"></boutique-list>
+            <booklet-list></booklet-list>
         </div>
-        <div class="page-sidebar" id="sidebar">
+        <div class="page-sidebarx" id="sidebar">
             <sidebar-box title="小册标签" icon="tags" color="red">
                 <sidebar-tags slot="list"></sidebar-tags>
             </sidebar-box>
@@ -14,33 +14,18 @@
 <script>
     import SidebarBox from "../../components/sidebar/sidebar-box";
     import SidebarTags from "../../components/sidebar/sidebar-tags";
-    import SidebarUserlist from "../../components/sidebar/sidebar-userlist";
-    import BoutiqueList from "../../components/boutique/boutique-list";
-    import {getBoutiqueList} from "../../api/boutique";
+    import BookletList from "../../components/booklet/booklet-list";
 
     export default {
         name: 'index',
         data() {
-            return {
-                boutiqueData: []
-            }
+            return {}
         },
-        components: {BoutiqueList, SidebarUserlist, SidebarTags, SidebarBox},
+        components: {BookletList, SidebarTags, SidebarBox},
         mounted() {
-            this.getBoutiqueData();
         },
-        methods: {
-            getBoutiqueData(classify) {
-                classify = !classify ? this.$route.params.classify : classify;
-                this.boutiqueData = getBoutiqueList(classify);
-            }
-        },
-        watch: {
-            $route(to, from) {
-                let classify = to.params.classify;
-                this.getBoutiqueData(classify);
-            }
-        }
+        methods: {},
+        watch: {}
     }
 </script>
 

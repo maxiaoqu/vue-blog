@@ -26,10 +26,12 @@
                 navData.pop();
                 this.navData = navData;
             },
-            checkIsActive(path){
-                if(this.activeNav.includes(path)){
+            checkIsActive(path) {
+                if (this.activeNav.includes('articleDetails')) {
+                    return false;
+                } else if (this.activeNav.includes(path)) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             }
@@ -58,7 +60,7 @@
                 color: #e7475d;
             }
 
-            &.active{
+            &.active {
                 color: #e7475d;
             }
         }

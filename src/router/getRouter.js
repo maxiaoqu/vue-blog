@@ -64,6 +64,13 @@ export const bookletRouter = [{
             title: '小册'
         },
         component: () => import ("@/views/booklet/index.vue")
+    },{
+        path: 'bookDetail/:bookid',
+        name: 'bookDetail',
+        meta: {
+            title: '小册'
+        },
+        component: () => import ("@/views/booklet/bookDetail.vue")
     }]
 }];
 
