@@ -2,7 +2,7 @@
     <ul class="header-nav">
         <li class="header-nav-item"
             v-for="(item,index) in navData"
-            :class="{ 'active': item.path == activeNav}"
+            :class="{ 'active': checkIsActive(item.path)}"
             :key="index"
             @click="gotoLink(item)">
             {{item.name}}
@@ -25,6 +25,13 @@
                 let navData = this.getNavData().concat();
                 navData.pop();
                 this.navData = navData;
+            },
+            checkIsActive(path){
+                if(this.activeNav.includes(path)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
         }
     }

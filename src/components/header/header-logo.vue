@@ -24,7 +24,7 @@
     height: 100%;
     display: inline-block;
     img{
-        height: 60%;
+        height: 100%;
         padding: 10px 0;
     }
     &-max{

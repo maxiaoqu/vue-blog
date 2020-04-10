@@ -1,28 +1,49 @@
 <template>
-    <div class="index">
-        小册
+    <div class="page">
+        <div class="page-list">
+            <boutique-list :boutiqueData="boutiqueData"></boutique-list>
+        </div>
+        <div class="page-sidebar" id="sidebar">
+            <sidebar-box title="小册标签" icon="tags" color="red">
+                <sidebar-tags slot="list"></sidebar-tags>
+            </sidebar-box>
+        </div>
     </div>
 </template>
 
 <script>
+    import SidebarBox from "../../components/sidebar/sidebar-box";
+    import SidebarTags from "../../components/sidebar/sidebar-tags";
+    import SidebarUserlist from "../../components/sidebar/sidebar-userlist";
+    import BoutiqueList from "../../components/boutique/boutique-list";
+    import {getBoutiqueList} from "../../api/boutique";
+
     export default {
         name: 'index',
-        components: {},
-        mounted() {},
-        methods: {}
+        data() {
+            return {
+                boutiqueData: []
+            }
+        },
+        components: {BoutiqueList, SidebarUserlist, SidebarTags, SidebarBox},
+        mounted() {
+            this.getBoutiqueData();
+        },
+        methods: {
+            getBoutiqueData(classify) {
+                classify = !classify ? this.$route.params.classify : classify;
+                this.boutiqueData = getBoutiqueList(classify);
+            }
+        },
+        watch: {
+            $route(to, from) {
+                let classify = to.params.classify;
+                this.getBoutiqueData(classify);
+            }
+        }
     }
 </script>
 
 <style scoped lang="less">
-    .index {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        display: flex;
-    }
-    @media (max-width: 720px) {
-        .index {
 
-        }
-    }
 </style>

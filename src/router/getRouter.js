@@ -51,17 +51,17 @@ export const nettextRouter = [{
 export const bookletRouter = [{
     path: '/booklet',
     name: 'booklet',
-    redirect: '/booklet/vueOrg',
+    redirect: '/booklet/bookList',
     meta: {
         title: '小册',
         key: 'booklet'
     },
     component: Home,
     children: [{
-        path: 'vueOrg',
-        name: 'vueOrg',
+        path: 'bookList',
+        name: 'bookList',
         meta: {
-            title: 'vue文档'
+            title: '小册'
         },
         component: () => import ("@/views/booklet/index.vue")
     }]

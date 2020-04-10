@@ -119,7 +119,7 @@
         }
 
         &-describe {
-            max-height: 35px;
+            max-height: 45px;
             padding: 5px 0;
             overflow: hidden;
             display: -webkit-box;
