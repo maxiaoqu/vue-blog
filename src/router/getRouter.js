@@ -61,14 +61,14 @@ export const bookletRouter = [{
         path: 'bookList',
         name: 'bookList',
         meta: {
-            title: '小册'
+            title: '小册首页'
         },
         component: () => import ("@/views/booklet/index.vue")
     },{
         path: 'bookDetail/:bookid',
         name: 'bookDetail',
         meta: {
-            title: '小册'
+            title: '小册详情'
         },
         component: () => import ("@/views/booklet/bookDetail.vue")
     }]
@@ -78,18 +78,25 @@ export const bookletRouter = [{
 export const topicsRouter = [{
     path: '/topics',
     name: 'topics',
-    redirect: '/topics/huanti',
+    redirect: '/topics/topicsList',
     meta: {
         title: '话题'
     },
     component: Home,
     children: [{
-        path: 'huanti',
-        name: 'huanti',
+        path: 'topicsList',
+        name: 'topicsList',
         meta: {
-            title: '前端开发'
+            title: '话题首页'
         },
         component: () => import ("@/views/topics/index.vue")
+    },{
+        path: 'topicsDetail/:topicid',
+        name: 'topicsDetail',
+        meta: {
+            title: '话题详情'
+        },
+        component: () => import ("@/views/topics/topicsDetails.vue")
     }]
 }];
 
@@ -117,7 +124,7 @@ export const serverRouter = [{
     path: '/server',
     name: 'server',
     meta: {
-        title: '首页',
+        title: '其他的',
     },
     component: Child,
     redirect: '/serve/articleDetails',
@@ -125,7 +132,7 @@ export const serverRouter = [{
         path: 'articleDetails/:id',
         name: 'articleDetails',
         meta: {
-            title: '首页'
+            title: '文章详情'
         },
         component: () => import ("@/views/article/articleDetails.vue")
     }]

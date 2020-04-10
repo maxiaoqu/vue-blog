@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="page-list">
-            <topics-list></topics-list>
+            <topics-detail></topics-detail>
         </div>
         <div class="page-sidebarx" id="sidebar">
             <sidebar-box title="推荐话题" icon="tags" color="red">
@@ -14,28 +14,13 @@
 <script>
     import SidebarBox from "../../components/sidebar/sidebar-box";
     import SidebarTopics from "../../components/sidebar/sidebar-topics";
-    import TopicsList from "../../components/topics/topics-list";
-
+    import TopicsDetail from "../../components/topics/topics-detail";
     export default {
-        name: 'index',
-        components: {TopicsList, SidebarTopics, SidebarBox},
-        mounted() {
-        },
-        methods: {}
+        name: "topicsDetails",
+        components: {TopicsDetail, SidebarTopics, SidebarBox},
     }
 </script>
 
-<style scoped lang="less">
-    .index {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        display: flex;
-    }
+<style scoped>
 
-    @media (max-width: 720px) {
-        .index {
-
-        }
-    }
 </style>
