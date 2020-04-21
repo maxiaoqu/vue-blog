@@ -1,8 +1,11 @@
 <template>
-    <div :class="[{ 'fullscreen': s_fullScreen, 'shadow': boxShadow }]" class="v-note-wrapper markdown-body"
+    <div :class="[{ 'fullscreen': s_fullScreen, 'shadow': boxShadow }]"
+         class="v-note-wrapper markdown-body"
          :style="{'box-shadow': boxShadow ? boxShadowStyle : ''}">
         <!--工具栏-->
-        <div class="v-note-op" v-show="toolbarsFlag" :style="{'background': toolbarsBackground}">
+        <div class="v-note-op"
+             v-show="toolbarsFlag"
+             :style="{'background': toolbarsBackground}">
             <md-toolbar-left ref="toolbar_left"
                              :editable="editable"
                              :transition="transition"
@@ -35,8 +38,13 @@
         <!--编辑展示区域-->
         <div class="v-note-panel">
             <!--编辑区-->
-            <div ref="vNoteEdit" @scroll="$v_edit_scroll" class="v-note-edit divarea-wrapper"
-                 :class="{'scroll-style': s_scrollStyle, 'scroll-style-border-radius': s_scrollStyle && !s_preview_switch && !s_html_code, 'single-edit': !s_preview_switch && !s_html_code, 'single-show': (!s_subfield && s_preview_switch) || (!s_subfield && s_html_code), 'transition': transition}"
+            <div ref="vNoteEdit"
+                 @scroll="$v_edit_scroll"
+                 class="v-note-edit divarea-wrapper"
+                 :class="{
+                     'scroll-style': s_scrollStyle, 'scroll-style-border-radius': s_scrollStyle && !s_preview_switch && !s_html_code,
+                     'single-edit': !s_preview_switch && !s_html_code, 'single-show': (!s_subfield && s_preview_switch) || (!s_subfield && s_html_code),
+                      'transition': transition}"
                  @click="textAreaFocus">
                 <div class="content-input-wrapper" :style="{'background-color': editorBackground}">
                     <!-- 双栏 -->
@@ -52,7 +60,8 @@
             </div>
             <!--展示区-->
             <div :class="{'single-show': (!s_subfield && s_preview_switch) || (!s_subfield && s_html_code)}"
-                 v-show="s_preview_switch || s_html_code" class="v-note-show">
+                 v-show="s_preview_switch || s_html_code"
+                 class="v-note-show">
                 <div ref="vShowContent"
                      v-html="d_render"
                      v-show="!s_html_code"
@@ -70,7 +79,9 @@
 
             <!--标题导航-->
             <transition name="slideTop">
-                <div v-show="s_navigation" class="v-note-navigation-wrapper" :class="{'transition': transition}">
+                <div v-show="s_navigation"
+                     class="v-note-navigation-wrapper"
+                     :class="{'transition': transition}">
                     <div class="v-note-navigation-title">
                         {{d_words.navigation_title}}
                         <i @click="toolbar_right_click('navigation')"
@@ -87,8 +98,11 @@
         <!--帮助文档-->
         <transition name="fade">
             <div ref="help">
-                <div @click="toolbar_right_click('help')" class="v-note-help-wrapper" v-if="s_help">
-                    <div class="v-note-help-content markdown-body" :class="{'shadow': boxShadow}">
+                <div @click="toolbar_right_click('help')"
+                     class="v-note-help-wrapper"
+                     v-if="s_help">
+                    <div class="v-note-help-content markdown-body"
+                         :class="{'shadow': boxShadow}">
                         <i @click.stop.prevent="toolbar_right_click('help')" class="fa fa-mavon-times"
                            aria-hidden="true"></i>
                         <div class="scroll-style v-note-help-show" v-html="d_help"></div>
@@ -98,25 +112,29 @@
         </transition>
         <!-- 预览图片 -->
         <transition name="fade">
-            <div @click="d_preview_imgsrc=null" class="v-note-img-wrapper" v-if="d_preview_imgsrc">
+            <div @click="d_preview_imgsrc=null"
+                 class="v-note-img-wrapper"
+                 v-if="d_preview_imgsrc">
                 <img :src="d_preview_imgsrc" alt="none">
             </div>
         </transition>
         <!--阅读模式-->
-        <div :class="{'show': s_readmodel}" class="v-note-read-model scroll-style" ref="vReadModel">
-            <div ref="vNoteReadContent" class="v-note-read-content" v-html="d_render">
+        <div :class="{'show': s_readmodel}"
+             class="v-note-read-model scroll-style"
+             ref="vReadModel">
+            <div ref="vNoteReadContent"
+                 class="v-note-read-content"
+                 v-html="d_render">
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import markdown from './lib/mixins/markdown.js';
     import mdAutoTextarea from "./components/mdAutoTextarea";
     import mdToolbarLeft from './components/mdToolbarLeft.vue';
     import mdToolbarRight from './components/mdToolbarRight.vue';
-
-    import markdown from './lib/mixins/markdown.js';
-
     import {keydownListen} from './lib/core/keydown-listen.js';
     import hljsCss from './lib/core/hljs/lang.hljs.css.js';
     import {
