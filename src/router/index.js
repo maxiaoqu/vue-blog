@@ -5,6 +5,7 @@ import {
     bookletRouter,
     topicsRouter,
     useRouter,
+    editorRouter,
     serverRouter,
     errorRouter
 } from './getRouter';
@@ -14,7 +15,7 @@ var getRouters;
 
 // 合并当前所有的路由
 const newRouters = (to, next, getrouter) => {
-    const routerArr = indexRouter.concat(nettextRouter).concat(bookletRouter).concat(topicsRouter).concat(useRouter).concat(serverRouter).concat(errorRouter);
+    const routerArr = indexRouter.concat(nettextRouter).concat(bookletRouter).concat(topicsRouter).concat(useRouter).concat(editorRouter).concat(serverRouter).concat(errorRouter);
     router.addRoutes(routerArr);
     next({...to, replace: true});
 };

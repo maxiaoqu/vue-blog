@@ -15,7 +15,12 @@ module.exports = {
     outputDir: process.env.outputDir,
     productionSourceMap: false,
     filenameHashing: false,
-    configureWebpack: {},
+    configureWebpack: config => {
+        config.module.rules.push({
+            test: /\.md$/,
+            loader: 'raw-loader'
+        });
+    },
     // 添加打包分析工具,使用方法：npm run build --report
     chainWebpack: config => {
         if (process.env.NODE_ENV === 'production') {

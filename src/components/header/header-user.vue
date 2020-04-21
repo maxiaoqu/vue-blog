@@ -1,6 +1,6 @@
 <template>
     <div class="header-user">
-        <button class="addArticle">写文章</button>
+        <button class="addArticle" @click="articleEditor">写文章</button>
         <user-logo></user-logo>
     </div>
 </template>
@@ -10,7 +10,14 @@
 
     export default {
         name: "header-user",
-        components: {UserLogo}
+        components: {UserLogo},
+        methods: {
+            articleEditor() {
+                this.$router.push({
+                    name: 'articleEditor'
+                })
+            }
+        }
     }
 </script>
 

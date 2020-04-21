@@ -119,6 +119,25 @@ export const useRouter = [{
     }]
 }];
 
+// 撰写文章
+export const editorRouter = [{
+    path: '/editor',
+    name: 'editor',
+    meta: {
+        title: '撰写',
+    },
+    component: Child,
+    redirect: '/editor/articleEditor',
+    children: [{
+        path: 'articleEditor',
+        name: 'articleEditor',
+        meta: {
+            title: '撰写文章'
+        },
+        component: () => import ("@/views/article/articleEditor.vue")
+    }]
+}]
+
 // 其余
 export const serverRouter = [{
     path: '/server',
@@ -126,7 +145,7 @@ export const serverRouter = [{
     meta: {
         title: '其他的',
     },
-    component: Child,
+    component: Home,
     redirect: '/serve/articleDetails',
     children: [{
         path: 'articleDetails/:id',

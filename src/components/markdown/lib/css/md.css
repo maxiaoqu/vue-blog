@@ -1,0 +1,13 @@
+.markdown-body strong{
+    font-weight: bolder;
+}
+
+.markdown-body .hljs-center {
+    text-align: center;
+}
+.markdown-body .hljs-right {
+    text-align: right;
+}
+.markdown-body .hljs-left {
+    text-align: left;
+}
