@@ -28,7 +28,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: end;
         position: fixed;
         right: 24px;
         bottom: 120px;

@@ -21,7 +21,6 @@ module.exports = {
             loader: 'raw-loader'
         });
     },
-    // 添加打包分析工具,使用方法：npm run build --report
     chainWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             if (process.env.npm_config_report) {

@@ -131,7 +131,8 @@
 </template>
 
 <script>
-    import markdown from './lib/mixins/markdown.js';
+    import markdown from './lib/mixins/markdown';
+    import mdMixins from './lib/mixins/mdMixins';
     import mdAutoTextarea from "./components/mdAutoTextarea";
     import mdToolbarLeft from './components/mdToolbarLeft.vue';
     import mdToolbarRight from './components/mdToolbarRight.vue';
@@ -157,13 +158,11 @@
     import {toolbar_left_click, toolbar_left_addlink} from './lib/toolbar_left_click.js';
     import {toolbar_right_click} from './lib/toolbar_right_click.js';
     import {CONFIG} from './lib/config.js';
-    import "./lib/font/css/fontello.css";
-    import './lib/css/md.css';
 
     const xss = require('xss');
     export default {
         name: 'markdownEditor',
-        mixins: [markdown],
+        mixins: [markdown, mdMixins],
         components: {
             mdToolbarLeft,
             mdToolbarRight,

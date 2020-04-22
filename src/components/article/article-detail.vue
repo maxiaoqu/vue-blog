@@ -12,17 +12,23 @@
         </div>
         <h4 class="article-detail-title">c文章标题文章标题文章标题文章标题文章标题文章标题文章标题文章标题文章标题</h4>
         <div class="article-detail-content">
-            文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
-            文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
-            文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
-            文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
+            <markdown-preview :mdData="mdData"></markdown-preview>
         </div>
     </article>
 </template>
 
 <script>
+    import MarkdownPreview from "../markdown/markdown-preview";
+    import mdFile from "../../../README.md"
+
     export default {
-        name: "article-detail"
+        name: "article-detail",
+        components: {MarkdownPreview},
+        data() {
+            return {
+                mdData: mdFile
+            }
+        }
     }
 </script>
 
