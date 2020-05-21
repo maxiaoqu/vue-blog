@@ -35,8 +35,6 @@
                 })()
             };
         },
-        created() {
-        },
         props: {
             fullHeight: {
                 type: Boolean,
@@ -76,6 +74,7 @@
             }
         },
         methods: {
+            // 监听键盘输入事件
             change($event) {
                 if (this.onchange) {
                     this.onchange(this.temp_value , $event)

@@ -1,6 +1,7 @@
 <template>
     <div class="v-left-item">
         <slot name="left-toolbar-before"/>
+        <!-- 字体：加粗 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.bold"
@@ -8,6 +9,7 @@
                 class="op-icon fa fa-bold"
                 aria-hidden="true"
                 :title="`${d_words.tl_bold} (ctrl+b)`"></button>
+        <!-- 字体：倾斜 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.italic"
@@ -15,6 +17,7 @@
                 class="op-icon fa fa-italic"
                 aria-hidden="true"
                 :title="`${d_words.tl_italic} (ctrl+i)`"></button>
+        <!-- 字体：几级标题 -->
         <div :class="{'selected': s_header_dropdown_open}"
              :disabled="!editable"
              type="button"
@@ -28,22 +31,42 @@
                 <div class="op-header popup-dropdown" :class="{'transition': transition}"
                      v-show="s_header_dropdown_open" @mouseenter="$mouseenter_header_dropdown"
                      @mouseleave="$mouseleave_header_dropdown">
-                    <div title="#" class="dropdown-item" @click.stop="$click_header('header1')"><span>{{d_words.tl_header_one}}</span>
+                    <div title="#" class="dropdown-item"
+                         @click.stop="$click_header('header1')">
+                        <span>{{d_words.tl_header_one}}</span>
                     </div>
-                    <div title="## " class="dropdown-item" @click.stop="$click_header('header2')"><span>{{d_words.tl_header_two}}</span>
+                    <div title="## "
+                         class="dropdown-item"
+                         @click.stop="$click_header('header2')">
+                        <span>{{d_words.tl_header_two}}</span>
                     </div>
-                    <div title="### " class="dropdown-item" @click.stop="$click_header('header3')"><span>{{d_words.tl_header_three}}</span>
+                    <div title="### "
+                         class="dropdown-item"
+                         @click.stop="$click_header('header3')">
+                        <span>{{d_words.tl_header_three}}</span>
                     </div>
-                    <div title="#### " class="dropdown-item" @click.stop="$click_header('header4')"><span>{{d_words.tl_header_four}}</span>
+                    <div title="#### "
+                         class="dropdown-item"
+                         @click.stop="$click_header('header4')">
+                        <span>{{d_words.tl_header_four}}</span>
                     </div>
-                    <div title="##### " class="dropdown-item" @click.stop="$click_header('header5')"><span>{{d_words.tl_header_five}}</span>
+                    <div title="##### "
+                         class="dropdown-item"
+                         @click.stop="$click_header('header5')">
+                        <span>{{d_words.tl_header_five}}</span>
                     </div>
-                    <div title="###### " class="dropdown-item" @click.stop="$click_header('header6')"><span>{{d_words.tl_header_six}}</span>
+                    <div title="###### "
+                         class="dropdown-item"
+                         @click.stop="$click_header('header6')">
+                        <span>{{d_words.tl_header_six}}</span>
                     </div>
                 </div>
             </transition>
         </div>
-        <span v-if="toolbars.header || toolbars.italic || toolbars.bold" class="op-icon-divider"></span>
+        <!-- 分割线 -->
+        <span v-if="toolbars.header || toolbars.italic || toolbars.bold"
+              class="op-icon-divider"></span>
+        <!-- 字体：下划线 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.underline"
@@ -51,6 +74,7 @@
                 class="op-icon fa fa-underline"
                 :title="`${d_words.tl_underline} (ctrl+u)`"
                 aria-hidden="true"></button>
+        <!-- 字体：中划线 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.strikethrough"
@@ -58,6 +82,7 @@
                 class="op-icon fa fa-strikethrough"
                 :title="`${d_words.tl_strikethrough} (ctrl+shift+d)`"
                 aria-hidden="true"></button>
+        <!-- 字体：标记 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.mark"
@@ -65,6 +90,7 @@
                 class="op-icon fa fa-thumb-tack"
                 :title="`${d_words.tl_mark} (ctrl+m)`"
                 aria-hidden="true"></button>
+        <!-- 字体：上角标 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.superscript"
@@ -72,6 +98,7 @@
                 class="op-icon fa fa-superscript"
                 aria-hidden="true"
                 :title="`${d_words.tl_superscript} (ctrl+alt+s)`"></button>
+        <!-- 字体：下角标 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.subscript"
@@ -79,6 +106,7 @@
                 class="op-icon fa fa-subscript"
                 aria-hidden="true"
                 :title="`${d_words.tl_subscript} (ctrl+shift+s)`"></button>
+        <!-- 字体：居左 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.alignleft"
@@ -87,6 +115,7 @@
                 aria-hidden="true"
                 :title="`${d_words.tl_alignleft} (ctrl+l)`">
         </button>
+        <!-- 字体：居中 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.aligncenter"
@@ -94,6 +123,7 @@
                 class="op-icon fa fa-align-center"
                 aria-hidden="true"
                 :title="`${d_words.tl_aligncenter} (ctrl+e)`"></button>
+        <!-- 字体：居右 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.alignright"
@@ -101,8 +131,10 @@
                 class="op-icon fa fa-align-right"
                 aria-hidden="true"
                 :title="`${d_words.tl_alignright} (ctrl+r)`"></button>
+        <!-- 分割线 -->
         <span v-if="toolbars.superscript || toolbars.subscript || toolbars.underline || toolbars.strikethrough || toolbars.mark"
               class="op-icon-divider"></span>
+        <!-- 段落：段落引用 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.quote"
@@ -110,6 +142,7 @@
                 class="op-icon fa fa-quote-left"
                 aria-hidden="true"
                 :title="`${d_words.tl_quote} (ctrl+q)`"></button>
+        <!-- 段落：有序列表 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.ol"
@@ -117,6 +150,7 @@
                 class="op-icon fa fa-list-ol"
                 aria-hidden="true"
                 :title="`${d_words.tl_ol} (ctrl+o)`"></button>
+        <!-- 段落：无序列表 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.ul"
@@ -124,14 +158,18 @@
                 class="op-icon fa fa-list-ul"
                 aria-hidden="true"
                 :title="`${d_words.tl_ul} (ctrl+alt+u)`"></button>
-        <span v-if="toolbars.ul || toolbars.ol || toolbars.quote" class="op-icon-divider"></span>
+        <!-- 分割线 -->
+        <span v-if="toolbars.ul || toolbars.ol || toolbars.quote"
+              class="op-icon-divider"></span>
+        <!-- 链接：网页链接 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.link"
-                @click.stop="$toggle_imgLinkAdd('link')"
+                @click.stop="toggle_imgLinkAdd('link')"
                 class="op-icon fa fa-link"
                 aria-hidden="true"
                 :title="`${d_words.tl_link} (ctrl+l)`"></button>
+        <!-- 链接：图片链接 -->
         <div :disabled="!editable"
              :class="{'selected': s_img_dropdown_open}"
              type="button"
@@ -146,8 +184,10 @@
                      v-show="s_img_dropdown_open"
                      @mouseleave="$mouseleave_img_dropdown"
                      @mouseenter="$mouseenter_img_dropdown">
-                    <div class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')">
-                        <span>{{d_words.tl_image}}</span></div>
+                    <div class="dropdown-item"
+                         @click.stop="toggle_imgLinkAdd('imagelink')">
+                        <span>{{d_words.tl_image}}</span>
+                    </div>
                     <div class="dropdown-item" style="overflow: hidden">
                         <input type="file"
                                accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
@@ -160,7 +200,7 @@
                          class="dropdown-item dropdown-images"
                          :title="item[1].name"
                          :key="index"
-                         @click.stop="$imgFileListClick(index)">
+                         @click.stop="imgFileListClick(index)">
                         <span>{{item[1].name}}</span>
                         <button slot="right"
                                 type="button"
@@ -174,6 +214,7 @@
                 </div>
             </transition>
         </div>
+        <!-- 块级：代码块 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.code"
@@ -181,6 +222,7 @@
                 class="op-icon fa fa-code"
                 aria-hidden="true"
                 :title="`${d_words.tl_code} (ctrl+alt+c)`"></button>
+        <!-- 块级：表格 -->
         <button :disabled="!editable"
                 type="button"
                 v-if="toolbars.table"
@@ -188,26 +230,31 @@
                 class="op-icon fa fa-table"
                 aria-hidden="true"
                 :title="`${d_words.tl_table} (ctrl+alt+t)`"></button>
+        <!-- 分割线 -->
         <span v-if="toolbars.link || toolbars.imagelink || toolbars.code || toolbars.table"
               class="op-icon-divider"></span>
+        <!-- 操作：上一步 -->
         <button type="button"
                 v-if="toolbars.undo"
                 @click="$clicks('undo')"
                 class="op-icon fa fa-undo"
                 aria-hidden="true"
                 :title="`${d_words.tl_undo} (ctrl+z)`"></button>
+        <!-- 操作：下一步 -->
         <button type="button"
                 v-if="toolbars.redo"
                 @click="$clicks('redo')"
                 class="op-icon fa fa-repeat"
                 aria-hidden="true"
                 :title="`${d_words.tl_redo} (ctrl+y)`"></button>
+        <!-- 操作：清空 -->
         <button type="button"
                 v-if="toolbars.trash"
                 @click="$clicks('trash')"
                 class="op-icon fa fa-trash-o"
                 aria-hidden="true"
                 :title="`${d_words.tl_trash} (ctrl+breakspace)`"></button>
+        <!-- 操作：保持 -->
         <button type="button"
                 v-if="toolbars.save"
                 @click="$clicks('save')"
@@ -215,8 +262,7 @@
                 aria-hidden="true"
                 :title="`${d_words.tl_save} (ctrl+s)`"></button>
         <slot name="left-toolbar-after"/>
-
-        <!-- 添加image链接 -->
+        <!-- 操作：添加链接、图片时的弹出框 -->
         <transition name="fade">
             <div class="add-image-link-wrapper" v-if="s_img_link_open">
                 <div class="add-image-link">
@@ -236,8 +282,14 @@
                                v-model="link_addr"
                                :placeholder="link_type == 'link' ? d_words.tl_popup_link_addr : d_words.tl_popup_img_link_addr">
                     </div>
-                    <div class="op-btn cancel" @click.stop="s_img_link_open = false">{{d_words.tl_popup_link_cancel}}</div>
-                    <div class="op-btn sure" @click.stop="$imgLinkAdd()">{{d_words.tl_popup_link_sure}}</div>
+                    <div class="op-btn cancel"
+                         @click.stop="s_img_link_open = false">
+                        {{d_words.tl_popup_link_cancel}}
+                    </div>
+                    <div class="op-btn sure"
+                         @click.stop="imgLinkAdd()">
+                        {{d_words.tl_popup_link_sure}}
+                    </div>
                 </div>
             </div>
         </transition>
@@ -247,22 +299,27 @@
     export default {
         name: 'mdToolbarLeft',
         props: {
-            editable: { // 是否开启编辑
+            // 是否开启编辑
+            editable: {
                 type: Boolean,
                 default: true
             },
-            transition: { // TODO: 是否开启动画过渡
+            // TODO: 是否开启动画过渡
+            transition: {
                 type: Boolean,
                 default: true
             },
-            toolbars: { // 工具栏
+            // 工具栏展示工具对象
+            toolbars: {
                 type: Object,
                 required: true
             },
+            // 工具栏名称对象
             d_words: {
                 type: Object,
                 required: true
             },
+            // 图片文件调用方法
             image_filter: {
                 type: Function,
                 default: null
@@ -285,11 +342,13 @@
             }
         },
         methods: {
-            $imgLinkAdd() {
+            // 添加链接、图片时的弹出框的确定按钮事件
+            imgLinkAdd() {
                 this.$emit('toolbar_left_addlink', this.link_type, this.link_text, this.link_addr);
                 this.s_img_link_open = false;
             },
-            $toggle_imgLinkAdd(type) {
+            // 点击添加链接、上传图片时调用
+            toggle_imgLinkAdd(type) {
                 this.link_type = type;
                 this.link_text = this.link_addr = '';
                 this.s_img_link_open = true;
@@ -298,7 +357,7 @@
                 })
                 this.s_img_dropdown_open = false;
             },
-            $imgFileListClick(pos) {
+            imgFileListClick(pos) {
                 this.$emit('imgTouch', this.img_file[pos]);
             },
             $changeUrl(index, url) {
