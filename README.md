@@ -24,9 +24,10 @@
 - vuex
 - vue-router
 - vue-cli3
-- ES5\ES6
 - TypeScript
-- Less\css
+- ES5\ES6
+- scss\sass
+- Oidc
 
 
 ## 安装
@@ -61,5 +62,5 @@ npm run lint
     ├── store........................vuex状态管理
     ├── view.........................vue页面文件
     ├── APP.vue......................app.vue文件
-    └── main.js......................vue相关全局配置
+    └── main.js......................vue相关配置
 ```
